@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>True or Dare game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="small-container">
+      <div class="between">
+        <img class="menu" src="menu.png" />
+        <button class="help">?</button>
+      </div>
+
+      <div class="game-name">
+        <img src="img-1.png" />
+      </div>
+
+      <div class="buttons">
+        <button class="select-button button">SELECT</button>
+        <a href="game6.html" class="button play-button"> PLAY </a>
+      </div>
+      <div class="players">
+        <button class="close-modal">&times</button>
+        <div class="select">
+          <button id="2players">2 players</button>
+          <button id="3players">3 players</button>
+          <button id="4players">4 players</button>
+          <button id="5players">5 players</button>
+          <button id="6players">6 players</button>
+        </div>
+      </div>
+
+      <div class="players questions">
+        <h3>Options</h3>
+        <button class="close-modal close-question">&times</button>
+        <div class="select options">
+          <input type="text" placeholder="....input your true 👻" id="true" />
+          <button class="ok-True">OK</button>
+          <input type="text" placeholder="....input your dare 💀" id="dare" />
+          <button class="ok-dare">OK</button>
+        </div>
+      </div>
+
+      <div class="show-modal hidden">
+        <button class="close-help">&times</button>
+        <h2>How to Play</h2>
+        <p>1. click on the menu button to input your true and dare questions</p>
+        <p>
+          2. Each input You make click on the ok button to add to true or dare
+          list
+        </p>
+        <p>
+          3. click on the select button to select the number of players you want
+        </p>
+
+        <p>4. click on the play button to start game</p>
+        <p>5. Each player should select a color</p>
+        <p>
+          6. if the bottle points at any player after spining then the player
+          will select either a true or a dare
+        </p>
+      </div>
+      <div class="overlay"></div>
+    </div>
+    <script>
+      document.querySelector(".help").addEventListener("click", function () {
+        document.querySelector(".show-modal").style.left = "50%";
+        document.querySelector(".overlay").style.display = "block";
+      });
+
+      document
+        .querySelector(".close-help")
+        .addEventListener("click", function () {
+          document.querySelector(".show-modal").style.left = "-50%";
+          document.querySelector(".overlay").style.display = "none";
+        });
+
+      const selectButton = document.querySelector(".select-button");
+      selectButton.addEventListener("click", function () {
+        playersEl.style.left = "50%";
+        document.querySelector(".overlay").style.display = "block";
+
+        for (let i = 2; i < 7; i++) {
+          document
+            .getElementById(`${i}players`)
+            .addEventListener("click", function () {
+              playersEl.style.left = "-50%";
+              document.querySelector(".overlay").style.display = "none";
+              playBtn.href = `game${i}.html`;
+            });
+        }
+      });
+    </script>
+    <script src="genaral script.js"></script>
+  </body>
+</html>

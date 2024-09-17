@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>True or Dare game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="genaral script.js"></script>
+  </head>
+  <body>
+    <div class="small-container">
+      <div class="between">
+        <img class="menu" src="menu.png" />
+        <a href="index.html"><button>&larr;</button></a>
+      </div>
+      <main class="main-5">
+        <div class="player player-1"><img src="profile.png" /></div>
+        <div class="player player-2"><img src="profile.png" /></div>
+        <div class="player player-3"><img src="profile.png" /></div>
+        <div class="player player-5"><img src="profile.png" /></div>
+        <div class="player player-6"><img src="profile.png" /></div>
+        <img class="bottle" src="bottle.png" />
+      </main>
+      <div class="players">
+        <button class="close-modal">&times</button>
+        <div class="select opt">
+          <button class="button truebtn">TRUE</button>
+
+          <h2>OR</h2>
+
+          <button class="button darebtn">DARE</button>
+        </div>
+      </div>
+
+      <div class="players questions">
+        <h3>Options</h3>
+        <button class="close-modal close-question">&times</button>
+        <div class="select options">
+          <input type="text" placeholder="....input your true 👻" id="true" />
+          <button class="ok-True">OK</button>
+          <input type="text" placeholder="....input your dare 💀" id="dare" />
+          <button class="ok-dare">OK</button>
+        </div>
+      </div>
+
+      <div class="overlay"></div>
+    </div>
+
+    <script>
+      const bottleEl = document.querySelector(".bottle");
+
+      bottleEl.addEventListener("click", function () {
+        selectBtn.innerHTML = hmm;
+        const rotate = Math.trunc(Math.random() * 700);
+        bottleEl.style.transform = `rotate(${72 * rotate}deg)`;
+
+        setTimeout(guy, 2000);
+        que();
+      });
+    </script>
+  </body>
+</html>
